@@ -1,0 +1,37 @@
+2 - Processes:
+--------------
+-Program kis ko kehty hein? -> instructions  agar HD mein hein to ye program/job hay
+
+-Process kis ko kehtay? ->
+-instructions agar RAM mein hein to ye process hay,
+-instruction RAM mein kab load hoti hein? -> 
+-jab hamein instruction run kerwani hon prcocessor say
+
+-instructions/program/job in execution is called a process, and these instructions must be execute in a sequential fasion.
+
+-jab hamara program RAM mein load hota hay yani process ko system ki taraf say keya keya cheezein allocate hoti hein:
+
+code section
+data section
+stack
+heap
+CPU state (registers, Program counter, etc)
+PCB -> Prcess control block
+
+-CPU bound process and IO bound process:
+----------------------------------------
+-CPU bound processes: aisay processes jo CPU mein computation mein zada waqt guzarein or km waqt IO mein guzarien, media player, 
+-IO bound processes : aisay processes jo IO mein zada waqt guzarein or computation mein km waqt guzarein e.g. MS word
+
+-CPU burst time: process ka jo time CPU mein guzarta hay for performing computation is time ko CPU burst time kehtay hein
+
+-CPU bound processes ka CPU burst time zada hota hay jab keh IO bound processes ka CPU burst time km hota hay
+
+
+
+
+
+
+
+
+

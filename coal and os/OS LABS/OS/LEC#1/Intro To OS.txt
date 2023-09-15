@@ -1,0 +1,140 @@
+Introduction To Operating Systems:
+---------------------------------
+
+-what is a software/program ? -> set of instructions in a particular sequence/order to achieve desired output
+-goal of a software -> to solve a problem
+-OS is a software
+-types of softwares:
+	i)application softwares ->jo system software k ooper run hotay hein
+	ii)system softwares -> aisay softwares jin ki madad say user hardware say interact ker sakay , e.g device drivers, OS
+OS is a system software, OS hardware k sab say qareeb hota hay, matlab hardware say interact kerta hay user k liye
+
+Goals :
+------
+
+1- OS user k likhi hui instructions ko execute kerwana hay, program/static, program HD mein save hota hay, OS HD mein say instruction ko utha ker RAM mein load kerta hay, RAM say instructions processor ko dena for exection , ye Kaam bhi OS kerta hay - this is exectution phase
+
+2- resourse allocation -> memory, processor, files , IO ... etc
+
+3- Accounting/statistical data -> k program nay memory mein kitni space li hay, app wo processor mein kitnay time k liye execute hui hay, kon kon c resourses is program ko allocate ki gaye hein
+
+4- User ko authenticate kerna
+
+5- make the computer system convenient to user -> interface -> aisi cheez jis k through system mein mojood functionality ko access keya jaa sakay
+
+6- file manangment -> save file on disk, delete file, directories create kerna, file or directories k path save kerna, access rights
+
+7- Memory managment -> her program apni apni addres space per load ho or her program ki instructions ko data un ki apni he address space say provide keya jaye
+
+8- process managment -> process scheduling, process communication, process synchronization, deadlock handling
+
+
+void OS()
+{
+
+//method , routine, procedure, function
+void copy()
+{
+......
+......
+.
+.....
+
+
+
+}
+
+void delete()
+{
+......
+.....
+.
+.....
+}
+
+
+}
+
+
+Evolution of computer systems/operating systems:
+------------------------------------------------
+
+1- serial processing:
+---------------------
+
+-do not have any operating system
+-computer operator hota tha
+-program ko puch cards per likhtay thay
+-punch cards system ko input keye jatay thay
+-printer per output ata tha
+-ye systems bohat expensive hotay thay, ye systems ya to companies ya universities, bohat barray hotay thay, power bohat consume kertay thay, vaccuum tubes user hoti thein, 
+-logon ko ye system user kernay k liye fees pay kerni hoti thi
+-first problem scheduling
+-second problem , amount of time in setting up the machine
+-compiler load keya jata tha, 
+-user ka program load keyaa jataa hay, 
+-system us user k code ki object file banata tha
+-phir us object file k saath library k functions link keye   jatay thay
+-us k baad user ka program run hota tha
+
+2- batch systems:
+-----------------
+
+-computer operatro ki jaga operating systems aa gaya tha - monitor
+-monitor computer system ko manage kerta tha
+-sab say pehlay GWBasic k compiler load keya 
+-phir 20 user k GWBasic per likhay huay programs k batch ko aik saath system per load keya jataa tha
+-us k baad control automatically monitor ka paas chala jata tha , or monitor one by one user k programs ko system say execute kerwata tha
+-monitor system ko pehla program assign kerta tha or control system ko day deya kerta tha , system pehli job ko exectue kerta or execution khatm honay per control automatically monitor k paas aa jata , monitor second program system ko assign kerta or control system ko transfer ker deta
+-program execution k doran agar program ko user ka input derkaar hota to system idle condition mein chala jaata or user k input ka wait kerta, jab tak user input nahen day deta tab tak system idle rehta or agay execution na kerta
+-ye monitor jab tak load rehta jab tak saaray program execute na ho jatay - resident monitor
+-memory mein do qism k programs load ho rahay - monitor and user programs
+-memory men jis jaga monitor ka code load hota tha us jaga ko hm kehtay thay system address space
+-memory men jis jaga user ka program load hota tha us jaga ko hm kehtay thay user address space
+-monitor aik time slot reserve kerwata tha, jaisay he time slot poora ho jata tha, system monitor ko aik signal bhaijta tha ye batanay k liye k is program ka time slot poora ho gaya, or control monitor ko transfer ho jaya kerta tha, is signal ko hm interrupt signal kehtay hein
+-is system mein aik waqt mein aik program execute hota tha , jab tak pehla program poora execute na ho jaye jab tak dusra program execute nahein hota tha,
+
+
+multipragrammed systems:
+------------------------
+
+-multiple programs aik saath memory mein load kerwa deya kertay thay
+-jab system pehli job ko execute ker raha hota hay or us program mein agar user say input derkaaar ho to ab processor/system user k input ka wait karay ga, laikin us waiting k doran kisi dusray program ko execute kerna shuru ker day ga, is say system ka waiting time utilize ho ga, jaisay he phelay program mein suer ka input mil jaye ga to monitor system ko interrupt signal bhaijay ye batanay k liye k pehlay program ka user input aa chuka, to sysetm waiting k doran dusray program ko jo executer ker raha tha us ki exectuion ko suspend ker day ga or pehlay program ko wapis execute kerna shuru ker day ga
+--is system mein aik waqt mein aik program execute hota tha , jab tak pehla program poora execute na ho jaye jab tak dusra program execute nahein hota tha, shart ye hay k us pehlay program mein user say input derkaaar na ho
+-agar pehlay program mein user ka input derkar hay to phir dusray program ka number aas sakta hay
+-memory mein multiple programs k laod honay ko kehtay hein multiprogramming ya multitasking
+
+time sharing systems:
+---------------------
+
+-yahan per her program k liye aik time slice allocate ker deya jata , us time k liye app run hoti hay phir jaisay he time khatm hota hay pehaly program ko processor say nikal liya jata hay or dusray program ko processor mien in ker deya jata hay or count down reset ker deya jata hay
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
