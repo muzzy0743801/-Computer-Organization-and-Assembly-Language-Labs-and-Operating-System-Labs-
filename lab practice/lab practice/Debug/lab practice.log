@@ -1,0 +1,6 @@
+﻿  Assembling labpractice1.asm...
+labpractice1.asm(14): error A2006: undefined symbol : lav1
+labpractice1.asm(19): error A2006: undefined symbol : lav1
+labpractice1.asm(20): error A2006: undefined symbol : lav1
+labpractice1.asm(3): error A2206: missing operator in expression
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\BuildCustomizations\masm.targets(70,5): error MSB3721: The command "ml.exe /c /nologo /Zi /Fo"Debug\labpractice1.obj" /I "C:\Users\Musharaf\OneDrive\Desktop\Coal lab\Irvine" /W3 /errorReport:prompt  /Talabpractice1.asm" exited with code 1.
