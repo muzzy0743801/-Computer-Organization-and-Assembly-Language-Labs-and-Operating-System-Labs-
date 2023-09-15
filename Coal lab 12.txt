@@ -1,0 +1,46 @@
+Division:
+
+Include Irvine32.inc
+.data
+
+.code
+divof proc
+	sub edx,edx
+	mov ebx,[esp+4]
+	mov eax,[esp+8]
+	div ebx
+	ret 8
+divof endp
+main proc
+	mov eax,200
+	push eax
+	mov eax,20
+	push eax
+	call divof
+	call writeint
+exit
+main endp
+end main
+
+Subtraction:
+
+Include Irvine32.inc
+.data
+
+.code
+subof proc
+	mov ebx,[esp+4]
+	mov eax,[esp+8]
+	sub eax,ebx
+	ret 8
+subof endp
+main proc
+	mov eax,200
+	push eax
+	mov eax,20
+	push eax
+	call subof
+	call writeint
+exit
+main endp
+end main

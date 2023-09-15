@@ -1,0 +1,97 @@
+Q3
+INCLUDE Irvine32.inc
+.data
+.code
+main PROC
+mov eax,20
+call writeint
+call crlf
+jg label1
+
+label1:
+dec eax
+call writeint
+call crlf
+cmp eax,1
+jne label1
+exit
+main ENDP
+END main
+
+Q1
+INCLUDE Irvine32.inc
+.data
+val1 dword 10
+val2 dword 20
+.code
+main PROC
+mov eax,val1
+call writeint
+call crlf
+jg label1
+
+label1:
+inc eax
+call writeint
+call crlf
+cmp eax,val2
+jl label1
+exit
+main endp
+end main
+
+Q2
+
+INCLUDE Irvine32.inc
+.data
+num1 dword 47
+num2 dword 22
+num3 dword 31
+print byte "The highest number is"
+.code
+main proc
+mov eax,num1
+mov ebx,num2
+mov ecx,num3
+label1:
+cmp eax,ebx
+call writeint
+call crlf
+label2:
+cmp ebx,ecx
+call writeint
+call crlf
+label3:
+cmp ecx,eax
+call writeint
+call crlf
+exit
+main endp
+end main
+
+Q4
+
+INCLUDE Irvine32.inc
+.data 
+.code
+main PROC
+mov eax,0
+mov ecx,4
+L1:
+inc eax
+mov edx,eax
+cmp eax,3
+JE L2
+call writeint
+call crlf
+loop L1
+L2:
+mov eax,0
+add edx,1
+mov eax,edx
+call writeint
+call crlf
+loop L2
+exit
+main ENDP
+ENd main 

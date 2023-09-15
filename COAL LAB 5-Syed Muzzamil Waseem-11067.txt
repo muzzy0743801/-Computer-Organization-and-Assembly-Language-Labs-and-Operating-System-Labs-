@@ -1,0 +1,181 @@
+Question No 1:
+
+
+INCLUDE Irvine 32.inc
+;Syed Muzzamil Waseem 11067
+.data
+   mess BYTE "*",0
+   num1 dword ?
+   num2 dword ?
+
+ .code
+ main Proc 
+   mov ecx,1
+   .while ecx <= 9
+       mov eax,ecx
+       mov num1,1
+       .while num1 <=ecx
+           call writedec
+           inc num1
+       .endw
+       call crlf
+       inc ecx
+       mov num2,1
+       .while num2 <= ecx
+          mov edx,offset mess
+          call writestring
+          inc num2 
+       .endw
+       call crlf
+       inc ecx
+   .endw
+   call waitmsg
+   call crlf
+exit
+main ENDP
+END main
+
+
+Question 2:
+
+INCLUDE Irvine32.inc
+;Syed Muzzamil Waseem 11067
+.data
+   mess BYTE "*",0
+   num1 dword ?
+   num2 dword ?
+   num3 dword ?
+   num4 dword ?
+   spc byte " ",0
+ .code
+ main PROC 
+   mov ecx,1
+   .while ecx <= 9
+       mov eax,ecx
+       mov num1,1
+       mov num3,10
+       .while num3 > ecx
+          mov edx,offset spc
+           call writestring
+           dec num3
+       .endw
+       inc num3
+       .while num1 <= ecx
+          call writedec
+          call writedec
+          inc num1
+       .endw
+
+       call crlf
+       inc ecx
+       mov num4,10
+       .while num4 > ecx
+          mov edx,offset spc
+          call writestring
+          dec num4
+       .endw
+       mov num2,1
+       .while num2 <= ecx
+       call writedec
+       inc num1
+   .endw
+   call crlf
+   inc ecx
+   mov num4,10
+   .while num4 > ecx
+       mov edx, offset spc
+       call writestring
+       dec num4
+   .endw
+   mov num2,1 
+   .while num2 <= ecx
+      mov edx,offset mess
+      call writestring
+      call writestring
+      inc num2
+   .endw
+    call crlf
+    inc ecx
+  .endw
+ 
+  call waitmsg
+  call crlf
+
+exit
+main ENDP
+END main
+
+
+Question No 3:
+
+
+INCLUDE Irvine32.inc
+;Syed Muzzamil Waseem 11067
+.data
+   range dword ?
+   myMessage BYTE "Enter a Number:", 0dh, 0ah, 0
+   num1 dword ?
+   ans dword ?
+   num2 dword ?
+   star BYTE "*",0
+   spc byte " ",0
+.code
+main PROC 
+   mov edx,offset my Message
+   call writestring
+   call readint
+   mov range,eax
+   mov ecx,0
+   mov ebx,1
+   .while ecx<=range
+       mov eax,ecx
+       mov ebx,1
+       mov num2,6
+       .while num2 > ecx
+          mov edx, offset spc
+          call writestring
+           dec num2
+       .endw
+       mov ebx,2
+       .while ebx <= ecx
+          mov edx,offset star
+          call writestring
+          inc ebx
+       .endw   
+       mov ebx,1
+       .while ebx <=ecx
+          mov edx,offset star
+          call writestring
+          inc ebx
+       .endw
+       call crlf
+       inc ecx
+   .endw
+       mov ecx,1
+       .while ecx <= range
+          mov num2,0
+       .while num2 < ecx
+           mov edx,offset spc
+           call writestring
+           inc num2
+       .endw
+       mov ebx,eax
+      .while ebx >= ecx
+          mov edx, offset star
+          call writestring
+          dec ebx
+      .endw
+       mov ebx,eax
+      .while ebx >= ecx
+          mov edx, offset star
+          call writestring
+          dec ebx
+   .endw
+    call crlf
+    inc ecx
+ .endw
+
+call waitmsg
+exit
+main ENDP
+END main

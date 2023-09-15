@@ -1,0 +1,52 @@
+Question 1:
+Include irvine32.inc
+.data
+	
+	val1 DWORD 5
+	val2 DWORD 5
+	a DWORD ?
+	
+.code
+main proc
+mov eax,val1
+cmp eax,val2
+jne new
+mov a,1
+jmp new2
+new: 
+	mov a,0
+
+new2:
+	mov eax,a
+	call writedec
+	call crlf
+exit
+main endp
+end main
+
+Question 2:
+
+Include irvine32.inc
+.data
+ar1 SDWORD 3 dup (?)
+.code
+	main proc
+	mov esi,offset ar1
+	mov ecx,lengthof ar1
+next:
+	call readint
+	mov [esi],eax
+	test word ptr [esi],8000h
+	pushfd
+	add esi,TYPE ar1
+	popfd
+	loopnz next
+	jnz quit
+	sub esi,Type ar1
+	mov eax,[esi]
+	call writedec
+quit:
+	call crlf
+exit
+main endp
+end main

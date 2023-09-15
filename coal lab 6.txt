@@ -1,0 +1,124 @@
+a)
+	INCLUDE Irvine32.inc
+	.data	
+		msg1 byte "Enter any 10 numbers:",0,0dh,0ah
+		msg2 byte "Sum of 10 numbers:",0,0dh,0ah
+		var1 dword 10 dup(?)
+	.code
+	main PROC
+		mov ecx, 0
+		mov edx, offset msg1
+		call writestring
+		call crlf
+		.while ecx<10
+			call readint
+			mov var1[ecx*4], eax
+			inc ecx
+		.endw
+		mov ecx, 0
+		.while ecx<9
+			add eax, var1[ecx*4]
+			inc ecx
+		.endw
+		call crlf
+		mov edx, offset msg2
+		call writestring
+		call writedec
+		call crlf	
+	exit
+	main ENDP
+	END main
+
+b)
+	INCLUDE Irvine32.inc
+	.data	
+		msg1 byte "Enter any 5 numbers:",0,0dh,0ah
+		msg2 byte "Average of 5 numbers:",0,0dh,0ah
+		var1 dword 5 dup(?)
+	.code
+	main PROC
+		mov ecx, 0
+		mov edx, offset msg1
+		call writestring
+		call crlf
+		.while ecx<5
+			call readint
+			mov var1[ecx*4], eax
+			inc ecx
+		.endw
+		mov ecx, 0
+		.while ecx<5
+			add eax, var1[ecx*4]
+			inc ecx
+		.endw
+		call crlf
+		mov edx, offset msg2
+		call writestring
+		mov edx, 0
+		mov ebx, 5
+		div ebx
+		call writedec
+		call crlf	
+	exit
+	main ENDP
+	END main
+
+c)
+	INCLUDE Irvine32.inc
+	.data	
+		msg1 byte "Enter any 10 numbers:",0,0dh,0ah
+		var1 dword 5 dup(?)
+	.code
+	main PROC
+		mov ecx, 0
+		mov edx, offset msg1
+		call writestring
+		call crlf
+		.while ecx<5
+			call readint
+			mov var1[ecx*4], eax
+			inc ecx
+		.endw
+		mov ecx, 0
+		mov ebx, 4
+		call crlf
+		.while ecx<5
+			mov eax, var1[ebx*4]
+			call writedec
+			call crlf
+			dec ebx
+			inc ecx
+		.endw
+		call crlf		
+		call crlf	
+	exit
+	main ENDP
+	END main
+
+d)
+	INCLUDE Irvine32.inc
+	.data	
+		msg1 byte "Enter any 5 numbers:",0,0dh,0ah
+		msg2 byte "No. of elements:",0,0dh,0ah
+		var1 dword 7 dup(?)
+		len=($-var1)/4
+	.code
+	main PROC
+		mov ecx, 0
+		mov edx, offset msg1
+		call writestring
+		call crlf
+		.while ecx<=6
+			call readint
+			mov var1[ecx*4], eax
+			inc ecx
+		.endw
+		mov eax, len
+		call crlf
+		mov edx, offset msg2
+		call writestring
+		call writedec
+		call crlf
+	exit
+	main ENDP
+	END main

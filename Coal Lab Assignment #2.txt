@@ -1,0 +1,107 @@
+;Syed Muzzamil Waseem 11067
+;Coal Assignment2 Question 1
+Include Irvine32.inc
+.data 
+
+.code 
+main proc 
+	mov eax,0 
+	mov ebx,0 
+	mov ax,4 
+	call writeint 
+	call crlf 
+	mov bx,ax 
+	shl bx,2 
+	mov ax,bx 
+	call writedec 
+	call crlf
+exit 
+main endp 
+end main 
+-----------------------------------------------------------------------------------------------------------
+;Syed Muzzamil Waseem 11067
+;Coal Assignment2 Question 2
+Include Irvine32.inc
+.data 
+summ dword 0 
+.code 
+main proc 
+	push 1 
+	push 1 
+	push 0 
+	push 6 
+	push 7 
+	mov ecx,5 
+	mov esi,0 
+	l1: 
+		mov eax,[esp+esi] 
+		add summ,eax 
+		add esi,4 
+	loop l1 
+	mov eax,summ 
+	call writedec 
+	call crlf 
+exit 
+main endp 
+end main 
+-----------------------------------------------------------------------------------------------------------
+;Syed Muzzamil Waseem 11067
+;Coal Assignment2 Question 2
+Include Irvine32.inc
+.data 
+msg1 byte 'Even numbers from Given Range',0 
+.code 
+main proc 
+mov edx,0 
+mov ecx,11 
+mov eax,10 
+	.while(ecx>eax) 
+		mov esi,eax 
+		mov ebx,2 
+		div ebx 
+		mov eax,esi 
+		.if edx==0 
+			mov edx,offset msg1
+			call writestring 
+			call writeint 
+			call crlf 
+		.endif 
+		mov edx,0 
+		dec eax 
+	.endw 
+exit
+main endp 
+end main 
+-----------------------------------------------------------------------------------------------------------
+;Syed Muzzamil Waseem 11067
+;Coal Assignment2 Question 2
+Include Irvine32.inc
+.data
+	char byte ?
+	v1 byte "Enter the character: ",0
+	v2 byte "Valid Character",0
+	v3 byte "Invalid Character",0
+.code
+main proc
+	mov edx, offset v1
+	call writestring
+	call readchar
+	call writechar
+	call crlf
+	mov char, al
+	.if char == "y"
+		mov edx, offset v2
+		call writestring
+		call crlf
+	.elseif char == "Y"
+		mov edx, offset v2
+		call writestring
+		call crlf
+	.else
+		mov edx, offset v3
+		call writestring
+		call crlf
+	.endif
+	exit
+MAIN ENDP
+END MAIN	

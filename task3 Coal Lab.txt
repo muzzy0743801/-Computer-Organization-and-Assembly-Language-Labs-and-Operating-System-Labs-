@@ -1,0 +1,128 @@
+Q1
+INCLUDE Irvine32.inc
+.data
+;SYED MUZZAMIL WASEEM 11067
+msg1 BYTE "Enter value of (a):", 0dh,0ah,0
+msg2 BYTE "Enter value of (b):", 0dh,0ah,0
+msg3 BYTE "Answer of addition:", 0dh,0ah,0
+msg4 BYTE "Answer of subtraction:", 0dh,0ah,0
+
+.code
+main PROC
+mov edx,offset msg1
+call writestring
+call readint
+mov ebx,eax 
+
+mov edx,offset msg2
+call writestring
+call readint
+add eax,ebx
+call writeint
+call crlf
+
+mov edx,offset msg1
+call writestring
+call readint
+mov ebx,eax 
+
+mov edx,offset msg2
+call writestring
+call readint
+sub eax,ebx
+call writeint
+call crlf
+
+mov edx,offset msg3
+call writestring
+call readint
+mov ebx,eax 
+
+mov edx,offset msg4
+call writestring
+call readint
+sub eax,ebx
+call writeint
+call crlf
+call readint
+exit
+main ENDP
+END main
+Q2
+INCLUDE Irvine32.inc
+.data
+;SYED MUZZAMIL WASEEM 11067
+msg BYTE "Enter value of (a):", 0dh,0ah,0
+.code
+main PROC
+mov edx,offset msg
+call writestring
+call readint
+mov ebx,eax 
+mul ebx
+call crlf
+call writeint
+exit
+main ENDP
+END main
+Q3
+INCLUDE Irvine32.inc
+.data
+;SYED MUZZAMIL WASEEM 11067
+msg1 BYTE "Enter value of (a):", 0dh,0ah,0
+.code
+main PROC
+mov edx,offset msg1
+call writestring
+call readint
+mov ebx,eax 
+mul ebx
+mov ecx,ebx
+mul ecx
+call crlf
+call writeint
+exit
+main ENDP
+END main
+Q4
+INCLUDE Irvine32.inc
+.data
+;SYED MUZZAMIL WASEEM 11067
+msg1 BYTE "Enter value of (a):", 0dh,0ah,0
+msg2 BYTE "Enter value of (b):", 0dh,0ah,0
+msg3 BYTE "Answer of (a):", 0dh,0ah,0
+msg4 BYTE "Answer of (b):", 0dh,0ah,0
+
+.code
+main PROC
+mov edx,offset msg1
+call writestring
+call readint
+mov ebx,eax 
+mul ebx
+call writeint
+call crlf
+
+mov edx,offset msg2
+call writestring
+call readint
+mov ebx,eax 
+mul ebx
+call writeint
+call crlf
+
+mov edx,offset msg3
+call writestring
+call readint
+mov ebx,eax 
+
+mov edx,offset msg4
+call writestring
+call readint
+add eax,ebx
+call writeint
+call crlf
+exit
+main ENDP
+END main
+

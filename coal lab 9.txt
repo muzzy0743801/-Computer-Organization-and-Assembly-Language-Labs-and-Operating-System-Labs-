@@ -1,0 +1,39 @@
+INCLUDE Irvine32.inc
+.data
+mess BYTE "Enter 5 Floating Values: "
+mess1 BYTE "Output of Given Floating Values is: "
+var1 DWORD 5
+.code
+main proc
+mov edx,offset mess
+call writestring
+call crlf
+call readfloat
+call showfpustack
+call readfloat
+call showfpustack
+call readfloat
+call showfpustack
+call readfloat
+call showfpustack
+call readfloat
+call showfpustack
+
+mov edx,offset mess1
+call writestring
+call crlf
+fadd st(0),st(1)
+fadd st(0),st(2)
+fadd st(0),st(3)
+fadd st(0),st(4)
+call crlf
+call writefloat
+fild var1
+call showfpustack
+call crlf
+fdivr st(0),st(1)
+call crlf
+call writefloat
+exit
+main ENDP
+END main

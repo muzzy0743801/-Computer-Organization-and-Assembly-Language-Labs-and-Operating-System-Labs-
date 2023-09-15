@@ -1,0 +1,262 @@
+;Coal Lab 2 Practice
+Include Irvine32.inc
+.data
+.code
+main proc
+mov eax,5
+add eax,2
+call writedec
+call crlf
+mov ebx,eax
+mov eax,0
+mov eax,6
+sub eax,4
+call writedec
+call crlf
+mov ecx,eax
+mov eax,0
+mov eax,ebx
+mul ecx
+call writedec
+call crlf
+exit
+main Endp
+End main
+
+Include Irvine32.inc
+.data
+.code
+main proc
+mov eax,7
+mov ebx,8
+mul ebx
+call writedec
+call crlf
+mov ecx,eax
+mov eax,0
+mov ebx,0
+mov eax,3
+mov ebx,2
+mul ebx
+call writedec
+call crlf
+mov edx,eax
+mov eax,0
+mov eax,ecx
+sub eax,edx
+call writedec
+call crlf
+exit
+main Endp
+End main
+
+Include Irvine32.inc
+.data
+.code
+main proc
+mov eax,4
+mov ebx,2
+sub edx,edx
+div ebx
+call writedec
+call crlf
+mov ecx,eax
+mov eax,4
+add eax,4
+sub eax,2
+call writedec
+call crlf
+mul ecx
+call writedec
+call crlf
+div ebx
+call writedec
+call crlf
+exit
+main Endp
+End main
+
+Include Irvine32.inc
+.data
+mess1 BYTE "Enter Value Of a:",0dh,0ah,0
+mess2 BYTE "Enter Value Of b:",0dh,0ah,0
+mess3 BYTE "Answer of Addition",0dh,0ah,0
+mess4 BYTE "Answer of Subtraction",0dh,0ah,0
+mess5 BYTE "Above Simplify Values Subtraction Performed",0dh,0ah,0
+var1 DWORD ?
+var2 DWORD ?
+.code
+main Proc
+mov edx,offset mess1
+call writestring
+call readint
+mov ebx,eax
+
+mov edx,offset mess2
+call writestring
+call readint
+add eax,ebx
+mov edx,offset mess3
+call writestring
+call writeint
+call crlf
+mov var1,eax
+
+
+mov edx,offset mess1
+call writestring
+call readint
+mov ebx,eax
+
+mov edx,offset mess2
+call writestring
+call readint
+sub ebx,eax
+mov edx,offset mess4
+call writestring
+call writeint
+call crlf
+mov var2,eax
+
+mov eax,var1
+mov ebx,var2
+sub eax,ebx
+mov edx,offset mess5
+call writestring
+call writeint
+call crlf
+exit
+main endp
+end main
+
+Include Irvine32.inc
+.data
+mess1 BYTE "Enter Value of a: ",0dh,0ah,0
+mess2 BYTE "Enter Value of b: ",0dh,0ah,0
+mess3 BYTE "Addition of Both Square Values: ",0dh,0ah,0
+var1 DWORD ?
+var2 DWORD ?
+.code
+main Proc
+mov edx,offset mess1
+call writestring
+
+call readint
+mul eax
+call writeint
+call crlf
+mov var1,eax
+
+mov edx,offset mess2
+call writestring
+call readint
+mul eax
+call writeint
+call crlf
+mov var2,eax
+
+mov eax,var1
+mov ebx,var2
+add eax,ebx
+mov edx,offset mess3
+call writestring
+call writeint
+call crlf
+exit
+main endp
+end main
+
+Include Irvine32.inc
+.data
+mess1 BYTE "Enter Value of a: ",0dh,0ah,0
+mess2 BYTE "Enter Value of b: ",0dh,0ah,0
+mess3 BYTE "Addition of Both Qubic Values: ",0dh,0ah,0
+var1 DWORD ?
+var2 DWORD ?
+.code
+main Proc
+mov edx,offset mess1
+call writestring
+call readint
+mov ebx,eax
+mul ebx
+mov ecx,ebx
+mul ecx
+call writeint
+call crlf
+mov var1,eax
+
+mov edx,offset mess2
+call writestring
+call readint
+mov ebx,eax
+mul ebx
+mov ecx,ebx
+mul ecx
+call writeint
+call crlf
+mov var2,eax
+
+mov eax,var1
+mov ebx,var2
+add eax,ebx
+mov edx,offset mess3
+call writestring
+call writeint
+call crlf
+exit
+main endp
+end main
+
+Include Irvine32.inc
+.data
+
+.code
+main proc
+mov eax,0
+mov ecx,10
+label1:
+inc eax
+call writedec
+call crlf
+loop label1
+exit
+main endp
+end main
+
+Include Irvine32.inc
+.data
+val1 DWORD 10
+val2 DWORD 20
+.code
+main proc
+mov eax,val1
+mov ecx,10
+cmp eax,val2
+jne label1
+label1:
+inc eax
+call writedec
+call crlf
+loop label1
+exit
+main endp
+end main
+
+
+INCLUDE Irvine32.inc
+.data 
+ms BYTE "Heloo",0dh,0ah,0
+an DWORD ?
+.code
+main PROC
+call readint
+mov an,eax
+mov edx,offset ms
+mov ecx,0
+.while ecx<=an
+call writestring
+inc ecx
+.endw
+main ENDP
+ENd main 
